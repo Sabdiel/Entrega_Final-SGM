@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pedido;
+use App\Models\Cliente;
 
-class PedidosController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $pedidos=Pedido::all();
-        return view("pedidos.index",compact("pedidos"));
+        $clientes=Cliente::all();
+        return view("clientes.index",compact("clientes"));
         //
     }
 
@@ -27,7 +27,7 @@ class PedidosController extends Controller
     public function create()
     {
         //
-        return view("pedidos.create");
+        return view("clientes.create");
     }
 
     /**
@@ -39,12 +39,12 @@ class PedidosController extends Controller
     public function store(Request $request)
     {
         //
-        $pedido=new Pedido;
-        $pedido->Estatus=$request->Estatus;
-        $pedido->id_cliente=$request->id_cliente;
-        $pedido->id_vendedor=$request->id_vendedor;
-        $pedido->save();
-        return redirect("/pedidos");
+        $cliente=new Cliente;
+        $cliente->Nombre=$request->Nombre;
+        $cliente->Apellido_Paterno=$request->Apellido_Paterno;
+        $cliente->Apellido_Materno=$request->Apellido_Materno;
+        $cliente->save();
+        return redirect ("/clientes");
     }
 
     /**
@@ -56,8 +56,8 @@ class PedidosController extends Controller
     public function show($id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        return view ("pedidos.show", compact("pedido"));
+        $cliente=Cliente::findOrFail($id);
+        return view ("clientes.show", compact("cliente"));
     }
 
     /**
@@ -69,8 +69,8 @@ class PedidosController extends Controller
     public function edit($id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        return view ("pedidos.edit", compact("pedido"));
+        $cliente=Cliente::findOrFail($id);
+        return view ("clientes.edit", compact("cliente"));
     }
 
     /**
@@ -83,9 +83,9 @@ class PedidosController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        $pedido->update($request->all());
-        return redirect("/pedidos");
+        $cliente=Cliente::findOrFail($id);
+        $cliente->update($request->all());
+        return redirect("/clientes");
     }
 
     /**
@@ -97,7 +97,7 @@ class PedidosController extends Controller
     public function destroy($id)
     {
         //
-        Pedido::destroy($id);
-        return redirect("/pedidos");
+        Cliente::destroy($id);
+        return redirect ("/clientes");
     }
 }

@@ -7,12 +7,11 @@
 
 <body>
 <div class="container">
-<center><h1>Formulario del Cliente</h1></center>
-
+<center><h1>Formulario del Vendedor</h1></center>
 <div class="row">
 
-<form method="post" action="/clientes">
-<div class="form-group">
+<form method="post" action="/vendes">
+  <div class="form-group">
     <label for="exampleInputEmail1">Nombre</label><br>
     <input type="text" name="Nombre" class="form-control">
   </div>
@@ -26,11 +25,10 @@
     <label for="exampleInputEmail1">Apellido Materno</label><br>
     <input type="text" name="Apellido_Materno" class="form-control">
   </div>
-{{csrf_field()}}
+  {{csrf_field()}}
   <br><button type="submit" class="btn btn-dark" name="Enviar" value="Enviar">Enviar</button>
+
 </form>
 </body>
 </div>
 </div>
-<br>
-

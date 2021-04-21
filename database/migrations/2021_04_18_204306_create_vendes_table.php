@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVendedoresTable extends Migration
+class CreateVendesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateVendedoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendedores', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('Nombre', 50);
-            $table->string('Primer_apellido', 50);
-            $table->string('Segundo_apellido', 50);
-            $table->string('clave_vendedor', 50);
+        Schema::create('vendes', function (Blueprint $table) {
+            $table->id();
+            $table->string("Nombre");
+            $table->string("Apellido_Paterno");
+            $table->string("Apellido_Materno");
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateVendedoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendedores');
+        Schema::dropIfExists('vendes');
     }
 }

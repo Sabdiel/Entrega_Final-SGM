@@ -1,23 +1,40 @@
-Añadir un nuevo producto
-<form action="{{url('/productos')}}" method="POST">
-{{csrf_field()}}
-    <div class="input-group">
-    <label for="Nombre_producto">{{'Nombre'}}</label>
-        <input class="input--style-1" type="text" placeholder="nombre del producto" name="Nombre_producto" id="Nombre_producto" value="">
-    </div>
+@extends("../layouts/plantilla")
+@section("cabecera")
+@section("contenido")
 
-    <div class="input-group">
-    <label for="Tipo_producto">{{'Tipo'}}</label>
-        <input class="input--style-1" type="text" placeholder="Tipo del producto" name="Tipo_producto" id="Tipo_producto" value="">
-    </div>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <div class="input-group">
-    <label for="clave_producto">{{'Clave'}}</label>
-        <input class="input--style-1" type="text" placeholder="Clave del producto" name="clave_producto" id="clave_producto" value="">
-    </div>
+<body>
+<div class="container">
+<center><h1>Formulario de Productos</h1></center>
+<div class="row">
 
-    <div class="input-group">
-        <input type="submit" placeholder="Agregar" value="Agregar">
-    </div>
+<form method="post" action="/productos">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nombre del Producto</label><br>
+    <input type="text" name="Nombre" class="form-control">
+  </div>
 
+  <div class="form-group">
+    <label for="exampleInputEmail1">Descripcion del Producto</label><br>
+    <input type="text" name="Descripcion" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Precio del Producto</label><br>
+    <input type="text" name="Precio" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Contenido del Producto</label><br>
+    <input type="text" name="Contenido" class="form-control">
+  </div>
+  {{csrf_field()}}
+  <br><button type="submit" class="btn btn-dark" name="Enviar" value="Enviar" href="{{route('productos.create')}}">Enviar</button>
+  
 </form>
+
+</body>
+</div>
+</div>

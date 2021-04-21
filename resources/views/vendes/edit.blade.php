@@ -10,31 +10,31 @@
 <center><h1>Actualizar</h1></center>
 <div class="row">
 
-<form method="post" action="/clientes/{{$cliente->id}}">
+<form method="post" action="/vendes/{{$vende->id}}">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre del Cliente</label><br>
-    <input type="text" name="Nombre" value="{{$cliente->Nombre}}" class="form-control">
+    <label for="exampleInputEmail1">Nombre del Vendedor</label><br>
+    <input type="text" name="Nombre" value="{{$vende->Nombre}}" class="form-control">
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Apellido Paterno</label><br>
-    <input type="text" name="Apellido_Paterno" value="{{$cliente->Apellido_Paterno}}" class="form-control">
+    <input type="text" name="Apellido_Paterno" value="{{$vende->Apellido_Paterno}}" class="form-control">
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Apellido Materno</label><br>
-    <input type="text" name="Apellido_Materno" value="{{$cliente->Apellido_Materno}}" class="form-control">
+    <input type="text" name="Apellido_Materno" value="{{$vende->Apellido_Materno}}" class="form-control">
   </div>
   {{csrf_field()}}
 
   <input type="hidden" name="_method" value="PUT">
-  <br><button type="submit" class="btn btn-success" name="Enviar" value="Enviar">Actualizar</button>
+  <br><button type="submit" class="btn btn-primary" name="Enviar" value="Enviar">Actualizar</button>
   </form>
 
-  <form method="post" action="{{ url('/clientes/'.$cliente->id) }}">
+  <form method="post" action="{{ url('/vendes/'.$vende->id) }}">
         {{csrf_field() }}
         {{ method_field('Delete') }}
-        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Eliminar Cliente?')">Eliminar</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Eliminar Vendedor?')">Eliminar</button>
         </form>
 
   @section("pie")

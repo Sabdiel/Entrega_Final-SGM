@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pedido;
+use App\Models\Producto;
 
-class PedidosController extends Controller
+class ProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $pedidos=Pedido::all();
-        return view("pedidos.index",compact("pedidos"));
+        $productos=Producto::all();
+        return view("productos.index",compact("productos"));
         //
     }
 
@@ -27,7 +27,7 @@ class PedidosController extends Controller
     public function create()
     {
         //
-        return view("pedidos.create");
+        return view("productos.create");
     }
 
     /**
@@ -39,12 +39,14 @@ class PedidosController extends Controller
     public function store(Request $request)
     {
         //
-        $pedido=new Pedido;
-        $pedido->Estatus=$request->Estatus;
-        $pedido->id_cliente=$request->id_cliente;
-        $pedido->id_vendedor=$request->id_vendedor;
-        $pedido->save();
-        return redirect("/pedidos");
+        $producto=new Producto;
+        $producto->Nombre=$request->Nombre;
+        $producto->Descripcion=$request->Descripcion;
+        $producto->Precio=$request->Precio;
+        $producto->Contenido=$request->Contenido;
+        $producto->save();
+
+        return redirect ("/productos");
     }
 
     /**
@@ -56,8 +58,8 @@ class PedidosController extends Controller
     public function show($id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        return view ("pedidos.show", compact("pedido"));
+        $producto=Producto::findOrFail($id);
+        return view ("productos.show", compact("producto"));
     }
 
     /**
@@ -69,8 +71,8 @@ class PedidosController extends Controller
     public function edit($id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        return view ("pedidos.edit", compact("pedido"));
+        $producto=Producto::findOrFail($id);
+        return view ("productos.edit", compact("producto"));
     }
 
     /**
@@ -83,9 +85,9 @@ class PedidosController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $pedido=Pedido::findOrFail($id);
-        $pedido->update($request->all());
-        return redirect("/pedidos");
+        $producto=Producto::findOrFail($id);
+        $producto->update($request->all());
+        return redirect("/productos");
     }
 
     /**
@@ -97,7 +99,7 @@ class PedidosController extends Controller
     public function destroy($id)
     {
         //
-        Pedido::destroy($id);
-        return redirect("/pedidos");
+        Producto::destroy($id);
+        return redirect("/productos");
     }
 }
