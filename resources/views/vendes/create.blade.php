@@ -7,7 +7,7 @@
 
 <body>
 <div class="container">
-<center><h1>Formulario del Vendedor</h1></center>
+<center><h1>Agregar Vendedor</h1></center>
 <div class="row">
 
 <form method="post" action="/vendes">

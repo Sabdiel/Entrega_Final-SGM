@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,12 +25,7 @@
                 </div>
                 <br>
                 <div class="text-center">
-
                     <a href="{{route('productos.index')}}" class="btn btn-primary">Productos</a>
-                </div>
-                <br>
-                <div class="text-center">
-                    <a href="{{route('productos.create')}}" class="btn btn-success">Añadir Productos</a>
                 </div>
                 <br>
             </div>
@@ -46,10 +39,6 @@
                     <a href="{{route('vendes.index')}}" class="btn btn-primary">Vendedores</a>
                 </div>
                 <br>
-                <div class="text-center">
-                    <a href="{{route('vendes.create')}}" class="btn btn-success">Añadir Vendedores</a>
-                </div>
-                <br>
             </div>
             <div class="col">
                 <br>
@@ -59,10 +48,6 @@
                 <br>
                 <div class="text-center">
                     <a href="{{route('clientes.index')}}" class="btn btn-primary">Clientes</a>
-                </div>
-                <br>
-                <div class="text-center">
-                    <a href="{{route('clientes.create')}}" class="btn btn-success">Añadir Clientes</a>
                 </div>
                 <br>
             </div>
@@ -76,10 +61,6 @@
                     <a href="{{route('pedidos.index')}}" class="btn btn-primary">Pedidos</a>
                 </div>
                 <br>
-                <div class="text-center">
-                    <a href="{{route('pedidos.create')}}" class="btn btn-success">Añadir Pedidos</a>
-                </div>
-                <br>
             </div>
         </div>
     </div>
@@ -87,9 +68,9 @@
 <br>
 <br>
 <footer class="bg-light text-center text-lg-start">
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 SGM:
-<br>
-    <b class="text-dark" >Sabdiel Gutiérrez Mejía 8° A IDGS</b>
-  </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 SGM:
+        <br>
+        <b class="text-dark">Sabdiel Gutiérrez Mejía 8° A IDGS</b>
+    </div>
 </footer>

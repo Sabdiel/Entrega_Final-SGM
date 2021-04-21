@@ -7,7 +7,7 @@
 
 <body>
 <div class="container">
-<center><h1>Formulario de Productos</h1></center>
+<label><h1>Agregar Producto</h1></label>
 <div class="row">
 
 <form method="post" action="/productos">

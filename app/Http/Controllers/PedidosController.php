@@ -43,6 +43,8 @@ class PedidosController extends Controller
         $pedido->Estatus=$request->Estatus;
         $pedido->id_cliente=$request->id_cliente;
         $pedido->id_vendedor=$request->id_vendedor;
+        $pedido->Fecha_pedido=$request->Fecha_pedido;
+        $pedido->Fecha_envio=$request->Fecha_envio;
         $pedido->save();
         return redirect("/pedidos");
     }
